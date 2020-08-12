@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../static/CSS.css"
+	th:href="@{/CSS.css}">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<title>Review Moxie's</title>
+
+</head>
+<body>
+
+	<div class="context">
+		<div class="container">
+			<h1>Review Moxie's</h1>
+			<h3>Please! Feedback would be much appreciated in order to
+				improve in our service and your statisfaction!</h3>
+
+			<form method="post" action="#" th:action="@{/reviewSent}"
+				th:object="${restaurant}">
+				<div class="select">
+					Select your Restaurant: <select th:field="*{name}">
+						<option th:each="n:*{names}" th:value="${n}" th:text="${n}">
+					</select>
+				</div>
+				<div class="title">
+					<input class="form-control" type="text" name="title"
+						placeholder="TITLE OF THE REVIEW">
+				</div>
+				<div class="description">
+					<textarea name="description" placeholder="BODY OF THE REVIEW"></textarea>
+				</div>
+				<div class="row">
+					<div class="col"></div>
+					<div class="col">
+						<input class="form-control mb-4" type="text"
+							placeholder="YOUR NAME" name="reviewer">
+					</div>
+					<div class="col"></div>
+				</div>
+				<div class="button">
+					<input class="btn btn-primary mb-2" type="submit" name="submit"
+						value="Send the Review">
+				</div>
+			</form>
+
+			<p class="link">
+				If you would like to see all the reviews sent, please click <a
+					href="reviews">HERE</a>!
+			</p>
+
+		</div>
+	</div>
+
+
+<!--The following CSS code was used for the background animation and was retrieved from:
+
+https://codepen.io/mohaiman/pen/MQqMyo -->
+	<div class="area">
+		<ul class="circles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+</body>
+</html>
